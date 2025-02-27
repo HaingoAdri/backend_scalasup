@@ -7,12 +7,12 @@ import java.time.LocalDate;
 public class Candidature {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCandidature;
+    private Long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "statut", length = 100)
     private String statut;
 
-    @Column(nullable = false)
+    @Column(name = "dateSoumission")
     private LocalDate dateSoumission;
 
     @ManyToOne
@@ -24,12 +24,12 @@ public class Candidature {
     private University University;
 
     // Getters and Setters
-    public Long getIdCandidature() {
-        return idCandidature;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdCandidature(Long idCandidature) {
-        this.idCandidature = idCandidature;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getStatut() {

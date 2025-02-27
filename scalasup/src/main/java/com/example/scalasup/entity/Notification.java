@@ -7,19 +7,19 @@ import java.util.Date;
 public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idNotification;
+    private Long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "type", length = 100)
     private String type;
 
-    @Column(nullable = false)
+    @Column(name = "message")
     private String message;
 
-    @Column(nullable = false)
+    @Column(name = "dateNotification")
     @Temporal(TemporalType.DATE)
     private Date dateNotification;
 
-    @Column(nullable = false)
+    @Column(name = "lu")
     private Boolean lue = false;
 
     @ManyToOne
@@ -27,12 +27,12 @@ public class Notification {
     private Etudiant etudiant;
 
     // Getters and Setters
-    public Long getIdNotification() {
-        return idNotification;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdNotification(Long idNotification) {
-        this.idNotification = idNotification;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getType() {

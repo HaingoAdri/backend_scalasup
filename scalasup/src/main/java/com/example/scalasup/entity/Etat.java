@@ -6,21 +6,21 @@ import jakarta.persistence.*;
 public class Etat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEtat;
+    private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "nom", length = 255)
     private String nom;
 
-    @Column(nullable = false)
+    @Column(name = "description")
     private String description;
 
     // Getters and Setters
-    public Long getIdEtat() {
-        return idEtat;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdEtat(Long idEtat) {
-        this.idEtat = idEtat;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNom() {

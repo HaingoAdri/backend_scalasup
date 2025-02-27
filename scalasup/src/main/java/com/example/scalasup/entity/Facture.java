@@ -8,15 +8,15 @@ import java.time.LocalDate;
 public class Facture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idFacture;
+    private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "numero", unique = true)
     private String numero;
 
-    @Column(nullable = false)
+    @Column(name = "montant")
     private BigDecimal montant;
 
-    @Column(name = "dateEmission", nullable = false)
+    @Column(name = "dateEmission")
     private LocalDate dateEmission;
 
     @Column(name = "dateEcheance", nullable = false) 
@@ -27,12 +27,12 @@ public class Facture {
     private Etudiant etudiant;
 
     // Getters and Setters
-    public Long getIdFacture() {
-        return idFacture;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdFacture(Long idFacture) {
-        this.idFacture = idFacture;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNumero() {

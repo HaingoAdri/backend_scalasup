@@ -6,9 +6,9 @@ import jakarta.persistence.*;
 public class Reponse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idReponse;
+    private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "valeur")
     private String valeur;
 
     @ManyToOne
@@ -16,12 +16,12 @@ public class Reponse {
     private Champ champ;
 
     // Getters and Setters
-    public Long getIdReponse() {
-        return idReponse;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdReponse(Long idReponse) {
-        this.idReponse = idReponse;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getValeur() {

@@ -7,22 +7,22 @@ import java.util.Date;
 public class Messagerie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idMessage;
+    private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "expediteur", nullable = false, length = 255)
     private String expediteur;
 
-    @Column(nullable = false, length = 255) 
+    @Column(name = "destinataire", length = 255) 
     private String destinataire;
 
-    @Column(nullable = false)
+    @Column(name = "contenu")
     private String contenu;
 
-    @Column(nullable = false)
+    @Column(name = "dateEnvoi")
     @Temporal(TemporalType.DATE)
     private Date dateEnvoi;
 
-    @Column(nullable = false)
+    @Column(name = "lu")
     private Boolean lu = false;
 
     @ManyToOne
@@ -32,14 +32,13 @@ public class Messagerie {
     @ManyToOne
     @JoinColumn(name = "idEtudiantDest", nullable = false)
     private Etudiant etudiantDestinataire;
-
-    // Getters and Setters
-    public Long getIdMessage() {
-        return idMessage;
+    
+    public Long getId() {
+        return id;
     }
 
-    public void setIdMessage(Long idMessage) {
-        this.idMessage = idMessage;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getExpediteur() {

@@ -5,24 +5,24 @@ import jakarta.persistence.*;
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAdmin;
+    private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "nom", length = 255)
     private String nom;
 
-    @Column(nullable = false, length = 255, unique = true) 
+    @Column(name = "email", length = 255, unique = true) 
     private String email;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "password", length = 255)
     private String password;
 
     // Getters and Setters
-    public Long getIdAdmin() {
-        return idAdmin;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdAdmin(Long idAdmin) {
-        this.idAdmin = idAdmin;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNom() {

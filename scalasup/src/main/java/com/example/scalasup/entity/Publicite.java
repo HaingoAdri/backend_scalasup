@@ -5,15 +5,15 @@ import jakarta.persistence.*;
 public class Publicite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPublicite;
+    private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "titre", length = 255) 
     private String titre;
 
-    @Column(nullable = false)
+    @Column(name = "description")
     private String description;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "campagne", length = 255)
     private String campagne;
 
     @ManyToOne
@@ -21,12 +21,12 @@ public class Publicite {
     private University university;
 
     // Getters and Setters
-    public Long getIdPublicite() {
-        return idPublicite;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdPublicite(Long idPublicite) {
-        this.idPublicite = idPublicite;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitre() {

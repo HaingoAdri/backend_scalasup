@@ -6,15 +6,15 @@ import java.util.Date;
 public class Abonnement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAbonnement;
+    private Long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "type", length = 100)
     private String type;
 
-    @Column(nullable = false)
+    @Column(name = "dateDebut")
     private Date dateDebut;
 
-    @Column(nullable = false)
+    @Column(name = "dateExpiration")
     private Date dateExpiration;
 
     @ManyToOne
@@ -22,12 +22,12 @@ public class Abonnement {
     private University university;
 
     // Getters and Setters
-    public Long getIdAbonnement() {
-        return idAbonnement;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdAbonnement(Long idAbonnement) {
-        this.idAbonnement = idAbonnement;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getType() {

@@ -6,27 +6,27 @@ import java.util.Date;
 public class Etudiant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEtudiant;
+    private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "nom", length = 255)
     private String nom;
 
-    @Column(nullable = false, length = 255, unique = true)
+    @Column(name = "email", length = 255, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name = "dateNaissance")
     private Date dateNaissance;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "password", length = 255)
     private String password;
 
     // Getters and Setters
-    public Long getIdEtudiant() {
-        return idEtudiant;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdEtudiant(Long idEtudiant) {
-        this.idEtudiant = idEtudiant;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNom() {

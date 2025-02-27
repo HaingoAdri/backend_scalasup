@@ -6,15 +6,15 @@ import jakarta.persistence.*;
 public class Champ {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idChamp;
+    private Long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "type", length = 100)
     private String type;
 
-    @Column(nullable = false)
+    @Column(name = "question")
     private String question;
 
-    @Column(nullable = false)
+    @Column(name = "obligatoire")
     private Boolean obligatoire;
 
     @ManyToOne
@@ -22,12 +22,12 @@ public class Champ {
     private Formulaire formulaire;
 
     // Getters and Setters
-    public Long getIdChamp() {
-        return idChamp;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdChamp(Long idChamp) {
-        this.idChamp = idChamp;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getType() {

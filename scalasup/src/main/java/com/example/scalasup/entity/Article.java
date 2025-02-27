@@ -7,15 +7,15 @@ import java.util.Date;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idArticle;
+    private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "titre", length = 255)
     private String titre;
 
-    @Column(nullable = false)
+    @Column(name = "contenu")
     private String contenu;
 
-    @Column(nullable = false)
+    @Column(name = "datePublication")
     private Date datePublication;
 
     @ManyToOne
@@ -23,12 +23,12 @@ public class Article {
     private University universite;
 
     // Getters and Setters
-    public Long getIdArticle() {
-        return idArticle;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdArticle(Long idArticle) {
-        this.idArticle = idArticle;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitre() {

@@ -5,12 +5,12 @@ import jakarta.persistence.*;
 public class Formation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idFormation;
+    private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "nom", length = 255)
     private String nom;
 
-    @Column(nullable = false)
+    @Column(name = "description")
     private String description;
 
     @ManyToOne
@@ -18,12 +18,12 @@ public class Formation {
     private University university;
 
     // Getters and Setters
-    public Long getIdFormation() {
-        return idFormation;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdFormation(Long idFormation) {
-        this.idFormation = idFormation;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNom() {

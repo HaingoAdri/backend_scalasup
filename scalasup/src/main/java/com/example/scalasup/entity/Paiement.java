@@ -8,15 +8,15 @@ import java.time.LocalDate;
 public class Paiement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPaiement;
+    private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "montant")
     private BigDecimal montant;
 
-    @Column(nullable = false)
+    @Column(name = "date")
     private LocalDate date;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "statut", length = 100)
     private String statut;
 
     @ManyToOne
@@ -24,12 +24,12 @@ public class Paiement {
     private Etudiant etudiant;
 
     // Getters and Setters
-    public Long getIdPaiement() {
-        return idPaiement;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdPaiement(Long idPaiement) {
-        this.idPaiement = idPaiement;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public BigDecimal getMontant() {

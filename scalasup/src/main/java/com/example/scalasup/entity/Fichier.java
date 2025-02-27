@@ -7,18 +7,18 @@ import java.util.Date;
 public class Fichier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idFichier;
+    private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "nom", length = 255)
     private String nomFichier;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "type", length = 100)
     private String typeFichier;
 
-    @Column(nullable = false)
+    @Column(name = "taille")
     private Integer tailleFichier;
 
-    @Column(nullable = false)
+    @Column(name = "dateTelechargement")
     @Temporal(TemporalType.DATE)
     private Date dateTelechargement;
 
@@ -27,12 +27,12 @@ public class Fichier {
     private Etudiant etudiant;
 
     // Getters and Setters
-    public Long getIdFichier() {
-        return idFichier;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdFichier(Long idFichier) {
-        this.idFichier = idFichier;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNomFichier() {

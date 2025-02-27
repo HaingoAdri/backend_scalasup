@@ -1,22 +1,22 @@
 package com.example.scalasup.entity;
 import jakarta.persistence.*;
 @Entity
-@Table(name = "University")
+@Table(name = "universite")
 public class University {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUniversite;
+    private Long id;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "nom", length = 255)
     private String nom;
 
-    @Column(nullable = false)
+    @Column(name = "adresse", nullable = false)
     private String adresse;
 
-    @Column(nullable = false, length = 255, unique = true)
+    @Column(name = "email", nullable = false, length = 255, unique = true)
     private String email;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "password", nullable = false, length = 255)
     private String password;
 
     @ManyToOne
@@ -24,12 +24,12 @@ public class University {
     private Admin admin;
 
     // Getters and Setters
-    public Long getIdUniversite() {
-        return idUniversite;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdUniversite(Long idUniversite) {
-        this.idUniversite = idUniversite;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNom() {
